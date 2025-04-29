@@ -2,14 +2,16 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 
+const path = require('path');
 require('dotenv').config()
 const mongoose = require("mongoose");
 const port = process.env.PORT || 3000;
+const_dirname = path.dirname("");
+
 
 //middleware
 app.use(express.json());
-
-
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 //routes
 
